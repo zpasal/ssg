@@ -43,15 +43,14 @@ var methods = {
 		}
 
 		if (opts.title) {
-			htmlMarkup += "<b><a href='" + opts.issue_url + "'>" +  opts.title + "</a></b></br></br>";
-			//htmlMarkup += "<img  style='width: 70px; height: 70px; display: inline-block;' src='" +  opts.image_url + "'></img>";
-			htmlMarkup += "<span style='color: black; display: inline-block;'>" + opts.description + "</span></br></br>";
-			//console.log(htmlMarkup);
-			marker.bindPopup(htmlMarkup);
+      popup =   "<div class='clearfix'>";
+      popup +=    "<img src={0}>".format(opts.image_url);
+      popup +=    "<div class='info'><b>{0}</b><br>{1}".format(opts.title, opts.description);
+      popup +=  "</div>";
+			marker.bindPopup(popup);
 		}
 
 		marker.addTo(data.map);
-
 	}
 };
 
