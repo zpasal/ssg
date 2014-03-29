@@ -70,7 +70,7 @@
     <div class="grid span8">
       <%= form_tag(ssg_admin_cities_path, method: "get", id: "mainForm", class: "controls") do %>
         <input type="text" required id="q" name="q" placeholder="Ime Općine" data-original-title="" title="" class="span3" style="margin: 35px 0 35px 27px">
-        <%= submit_tag("Pretraga") %>
+        <%= submit_tag("Pretraga", name: nil) %>
       <% end %>
       <div class="grid-title">
         <div class="pull-left">

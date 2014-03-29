@@ -7,7 +7,7 @@ class SsgAdmin::CitiesController < SsgAdminController
     unless params[:q]
       @cities = City.find(:all).sort() { |a,b| a.name <=> b.name}
     else
-      @cities = @user.get_cities.select{|city| city.name.downcase.include? params[:q].downcase}
+      @cities = City.where("name LIKE '%#{params[:q]}%'")
     end
   end
 
