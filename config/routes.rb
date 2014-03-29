@@ -65,7 +65,9 @@ Ssg::Application.routes.draw do
 
 
   namespace :admin do
-    resources :issues
+    resources :issues, shallow: true do
+      resources :updates, only: [:edit, :update]
+    end
     resource :city
   end
 
