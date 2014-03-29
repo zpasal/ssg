@@ -37,7 +37,7 @@ module ApplicationHelper
   end
 
   def icon_path(icon, extension = 'png')
-    return "icons/#{icon}.#{extension}"
+    return "/assets/icons/#{icon}.#{extension}"
   end
 
   def collect_city_names()
