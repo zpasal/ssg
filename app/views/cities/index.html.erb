@@ -18,6 +18,10 @@
 
 $(document).ready(function() {
 	$('#city_select').selectbox();
+	$('#mini_map').on("click", '.leaflet-popup-content-wrapper', function() { 
+		var url = $('.leaflet-popup-content a').attr("href");
+		window.location.href = url;
+	});
 });
 
 $(function () {

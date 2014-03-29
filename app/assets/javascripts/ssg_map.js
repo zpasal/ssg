@@ -44,8 +44,8 @@ var methods = {
 
 		if (opts.title) {
       popup =   "<div class='clearfix'>";
-      popup +=    "<img src={0}>".format(opts.image_url);
-      popup +=    "<div class='info'><b>{0}</b><br>{1}".format(opts.title, opts.description);
+      popup +=    "<img src={0} style='width:100%'>".format(opts.image_url);
+      popup +=    "<div class='info'><b><a href='" + opts.issue_url + "' style='color:black'>{0}</a></b><br>{1}".format(opts.title, opts.description);
       popup +=  "</div>";
 			marker.bindPopup(popup);
 		}
