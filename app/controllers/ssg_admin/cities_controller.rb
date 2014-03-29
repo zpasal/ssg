@@ -4,7 +4,11 @@ class SsgAdmin::CitiesController < SsgAdminController
   before_filter :check_ssg_admin
 
   def index
-    @cities = City.find(:all).sort() { |a,b| a.name <=> b.name}
+    unless params[:q]
+      @cities = City.find(:all).sort() { |a,b| a.name <=> b.name}
+    else
+      @cities = @user.get_cities.select{|city| city.name.downcase.include? params[:q].downcase}
+    end
   end
 
   def destroy
