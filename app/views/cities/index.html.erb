@@ -1,3 +1,12 @@
+<script>
+	$(document).ready(function() {
+		console.log("ready");
+		$('#mini_map').on("click", '.leaflet-popup-content-wrapper', function() { 
+			var url = $('.leaflet-popup-content a').attr("href");
+			window.location.href = url;
+		});
+	});
+</script>
 <div class="breadcrumb-container">
 	<a href="<%= root_path() %>">ULICA.BA</a> / <span><%= t('cities.index.cities')%></span>
 </div>
@@ -42,7 +51,7 @@ var __cities = {};
 
 function selectCity(selectedItem) {
 	var item = $(selectedItem);
-
+	console.log(456);
 	if (item.val() == 0) {
 		return true;
 	} else {
