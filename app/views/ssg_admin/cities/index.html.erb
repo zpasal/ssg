@@ -12,7 +12,6 @@
   }
 
 </style>
-
 <div class="container-fluid">
   <div class="row-fluid">
     <!-- FORM -->
@@ -92,7 +91,7 @@
               </tr>
             </thead> 
             <tbody>
-              <% @cities.sort.each do |city| %>
+              <% @cities.sort_by{|e| e[:name]}.each do |city| %>
                 <tr id="<%= "row_#{city.id}" %>">
                   <td><%= city.id %></td>
                   <td><%= city.name %></td>
