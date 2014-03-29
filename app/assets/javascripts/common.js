@@ -121,3 +121,16 @@ function errorDisplayed(error_text) {
 function appendErrorText(error_text) {
     $('#form-error-div ul').append('<li>' + error_text + '</li>');
 };
+
+//Format string implementation
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}
